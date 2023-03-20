@@ -1,0 +1,7 @@
+{
+  "name": "CamaraComercioAguachica",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
