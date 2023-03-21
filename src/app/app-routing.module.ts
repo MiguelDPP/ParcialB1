@@ -2,14 +2,33 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+  // Definimos las rutas de la aplicacion
+  
+  // Ruta por defecto ira a la pagina principal
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'main',
     pathMatch: 'full'
+  },
+  {
+    path: 'main',
+    loadChildren: () => import('./pages/main/main.module').then( m => m.MainPageModule)
+  },
+  {
+    path: 'mision-and-vision',
+    loadChildren: () => import('./pages/mision-and-vision/mision-and-vision.module').then( m => m.MisionAndVisionPageModule)
+  },
+  {
+    path: 'goals',
+    loadChildren: () => import('./pages/goals/goals.module').then( m => m.GoalsPageModule)
+  },
+  {
+    path: 'contacts',
+    loadChildren: () => import('./pages/contacts/contacts.module').then( m => m.ContactsPageModule)
+  },
+  {
+    path: 'events',
+    loadChildren: () => import('./pages/events/events.module').then( m => m.EventsPageModule)
   },
 ];
 

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Contactos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-text>
+      La camara de comercio se divide en las siguientes dependencias:
+    </ion-text>
+  </div>
+  <ion-accordion-group expand="inset">
+    <!-- <div > -->
+    <ion-accordion
+      [value]="i"
+      *ngFor="let dependencia of contacts, let i = index"
+    >
+      <ion-item slot="header">
+        <!-- <ion-label>{{dependencia.depend}}</ion-label> -->
+        <!-- Con capitalize -->
+        <ion-label>{{dependencia.depend}}</ion-label>
+      </ion-item>
+      <div
+        class="ion-padding"
+        slot="content"
+        *ngFor="let contact of dependencia.data"
+      >
+        <ion-item class="contact">
+          <ion-avatar slot="start">
+            <ion-img [src]="returnAvatar(contact.name)"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <h2>{{contact.name}}</h2>
+            <h3>{{contact.work}}</h3>
+            <p><ion-icon name="call-outline"></ion-icon> {{contact.phone}}</p>
+            <p>
+              <ion-icon name="mail-open-outline"></ion-icon> {{contact.email}}
+            </p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-accordion>
+    <!-- </div> -->
+    <!-- <ion-accordion value="second">
+      <ion-item slot="header">
+        <ion-label>Second Accordion</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Second Content</div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header">
+        <ion-label>Third Accordion</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Third Content</div>
+    </ion-accordion> -->
+  </ion-accordion-group>
+</ion-content>
