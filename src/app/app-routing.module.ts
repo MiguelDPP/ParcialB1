@@ -30,6 +30,14 @@ const routes: Routes = [
     path: 'events',
     loadChildren: () => import('./pages/events/events.module').then( m => m.EventsPageModule)
   },
+  {
+    path: 'formalities',
+    loadChildren: () => import('./pages/formalities/formalities.module').then( m => m.FormalitiesPageModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
+  },
 ];
 
 @NgModule({

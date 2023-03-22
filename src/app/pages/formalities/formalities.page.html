@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Tramites</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="assets/img/empresa.avif" alt="logo"></ion-img>
+  <div class="ion-padding">
+    <ion-text class="ion-text-center">
+      <h2><ion-icon name="newspaper"></ion-icon></h2>
+      <h1>Requisitos necesarios para registrar una empresa</h1>
+    </ion-text>
+    <ion-text class="ion-text-justify">
+      A continuación se presenta una guía para identificar los pasos necesarios
+      para crear, y registrar de manera fácil, una empresa en la Cámara de
+      Comercio de Aguachica.
+    </ion-text>
+  </div>
+  <ion-list>
+    <!-- Se trae toda la información que está en la variable makebussines de .page.ts -->
+    <ion-item-group *ngFor="let item of makebusines">
+      <ion-item-divider>
+        <h5>{{item.title}}</h5>
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-text>
+          <p>{{item.content}}</p>
+          <br />
+          <ion-button
+            fill="clear"
+            expand="block"
+            color="danger"
+            href="{{item.url}}"
+            >¿Quieres saber más?</ion-button
+          >
+        </ion-text>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+  <!-- Boton flotante que envie  a la parte superior de la pagina -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="scrollToTop()">
+      <ion-icon name="arrow-up"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

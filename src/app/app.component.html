@@ -9,16 +9,47 @@
           </ion-list-header>
           <!-- Aqui va el for que va a recorrer los items de la variable publica appPages
           Que se encuentra en elarchio app.component.ts -->
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+          <ion-menu-toggle
+            auto-hide="false"
+            *ngFor="let p of appPages; let i = index"
+          >
+            <ion-item
+              routerDirection="root"
+              [routerLink]="[p.url]"
+              lines="none"
+              detail="false"
+              routerLinkActive="selected"
+            >
+              <ion-icon
+                aria-hidden="true"
+                slot="start"
+                [ios]="p.icon + '-outline'"
+                [md]="p.icon + '-sharp'"
+              ></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
         <!-- Ponemos la version de la aplicacion -->
         <ion-list>
-          <ion-item lines="none" style="text-align: center;">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item
+              routerDirection="root"
+              routerLink="/about"
+              lines="none"
+              detail="false"
+              routerLinkActive="selected"
+            >
+              <ion-icon
+                aria-hidden="true"
+                slot="start"
+                ios="cog-outline"
+                md="cog-sharp"
+              ></ion-icon>
+              <ion-label>Acerca de</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-item lines="none" style="text-align: center">
             <ion-label>Version 1.0.0</ion-label>
           </ion-item>
         </ion-list>
